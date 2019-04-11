@@ -13,6 +13,10 @@ public class Piano extends World
      * (we can use these variables anywhere in the classO
      */
     int frames;
+    
+    
+    // Create the array (list of names)
+    String[] peopleInClass = {"Julio","Liam", "Dima", "Osman","Nick","Simon","Eric","Phillp","Joven","Joe","Gordon","Jieun","Selena","Jason","Sam","Jeff"};
     public Piano() 
     {
         super(800, 340, 1);
