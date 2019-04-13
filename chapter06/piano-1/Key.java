@@ -39,7 +39,8 @@ public class Key extends Actor
         //Stop showing the key being pressed
         //Condition 1 - The key was down the last time act() fired
         //Cpndition 2 - The "g" has been released )no longer being pressed
-        if ( (keyAlreadyDown == true && Greenfoot. isKeyDown("g") == false
+        
+        if ( Greenfoot.isKeyDown("g")&& !KeyAlreadyDown )
         {
             //Key is up
             setImage("white-key.png");
