@@ -1,9 +1,12 @@
 #BlueJ class context
 comment0.target=Key
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Create\ a\ new\ key.\ \n\ Constructor-\ it\ runs\ ince\ when\ a\ Key\ object\ is\ created.\n\ \ \ \ public\ Key()\n\ \ \ \ {\n\ \ \ \ \ \ \n\ \ \ \ \ //\ No\ key\ has\ been\ pressed\ \n\ \ \ \ \ isDown\ \=\ false;\n\ \ \ \ }\n\n\ \ \ \ /**\n\ Do\ the\ action\ for\ this\ key.\n
+comment1.params=keyName\ soundFile
+comment1.target=Key(java.lang.String,\ java.lang.String)
+comment1.text=\n\ Create\ a\ new\ key.\ \n\ Constructor-\ it\ runs\ ince\ when\ a\ Key\ object\ is\ created.\n
 comment2.params=
-comment2.target=void\ play()
-comment2.text=\n\ play\ the\ note\ of\ this\ key.\n
-numComments=3
+comment2.target=void\ act()
+comment2.text=\n\ Do\ the\ action\ for\ this\ key.\n
+comment3.params=
+comment3.target=void\ play()
+comment3.text=\n\ play\ the\ note\ of\ this\ key.\n
+numComments=4

@@ -7,17 +7,24 @@ public class Key extends Actor
      * These can used anywhere in the class below.
      */
     //Will keep track of whether a key was just pressed
-    private boolean isDown;
+    private boolean keyAlreadyDown;
+    //Will contain thekey and sound file that this instance of the class will play
+    private String key;
+    private String sound;
     
     
     /**
      * Create a new key. 
      * Constructor- it runs ince when a Key object is created.
-    public Key()
+     */
+    public Key(String keyName, String soundFile)
     {
-      
      // No key has been pressed 
-     keyAlreadtDown = false;
+     keyAlreadyDown = false;
+     
+     //set the instance variables using the prameters
+     key = keyName;
+     sound= soundFile;
     }
 
     /**
@@ -28,23 +35,22 @@ public class Key extends Actor
         //Animate the piano key being pressed
         //Condition 1 - is the "g" key being pressed 
         //Condition 2 - was the "g: key alreadt down
-        if ( Greenfoot.isKeyDown("g") && isDown == false )
+        if ( Greenfoot.isKeyDown(key)&& !keyAlreadyDown )
         {
             //Key is down
             setImage("white-key-down.png");
             play();
-            keyAlreadtDown= true;
+            keyAlreadyDown = true;
         }
         
         //Stop showing the key being pressed
         //Condition 1 - The key was down the last time act() fired
-        //Cpndition 2 - The "g" has been released )no longer being pressed
-        
-        if ( Greenfoot.isKeyDown("g")&& !KeyAlreadyDown )
+        //Condition 2 - The "g" has been released (no longer being pressed)
+        if  ( keyAlreadyDown == true && !Greenfoot.isKeyDown(key))
         {
             //Key is up
             setImage("white-key.png");
-            isDown = false;
+            keyAlreadyDown = false;
         }
     }
 
@@ -53,7 +59,7 @@ public class Key extends Actor
      */
     public void play()
     {
-        Greenfoot.playSound("3a.wav");
+        Greenfoot.playSound(sound + ".wav");
     }
 
 }
