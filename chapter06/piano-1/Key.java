@@ -23,7 +23,7 @@ public class Key extends Actor
      keyAlreadyDown = false;
      
      //set the instance variables using the prameters
-     key = keyName;
+     key = keyName;                   
      sound= soundFile;
     }
 
