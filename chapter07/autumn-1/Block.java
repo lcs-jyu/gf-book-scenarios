@@ -1,6 +1,8 @@
 import greenfoot.*;
+// In order to use a List in Java, we must import it 
+import java.util.List;
 
-/**
+/**2
  * A block that bounces back and forth across the screen.
  * 
  * @author Michael Kölling
@@ -75,9 +77,27 @@ public class Block extends Actor
      */
     private void checkMouseClick()
     {
-        if (Greenfoot.mouseClicked(null)) 
+       // When null is the argument, Greenfoot responds to a mouse click ANYWHERE on screen
+       // When this is the argument, Greenoot responds to a mouse ONlY on the Block object
+        if (Greenfoot.mouseClicked(this)) 
         {
-            // do this when the mouse is clicked. currently: nothing.
+            // 1. Get an object reference to the world                        
+            World myWorld = getWorld(); 
+            
+            // 2. Get a list that contains object references to ALL the Leaf objects in world
+            //   TYPE   NAME                       CLASS THAT WE WANT OBJECTS OF 
+            List<Leaf> leaves = myWorld.getObjects(Leaf.class);
+            
+            
+            // 3. Iterate(loop) through the list of Lef objects 
+            //    Each iteration will provide an object reference to a specific Leaf object 
+            //    "For each Leaf in the leaves list..."'
+            for (Leaf leaf : leaves) 
+            {
+                leaf.changeImage();
+                
+            }
+            
         }
     }
     
